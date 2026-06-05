@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Team_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="720" Width="1080">
 
     <Grid>
         <ComboBox HorizontalAlignment="Left"
-                  Margin="34,26,0,0"
+                  Margin="802,70,0,0"
                   VerticalAlignment="Top"
                   Width="200"
                   Name="ReportChoice"
@@ -19,14 +19,69 @@
 
         <Button Content="Зробити звіт"
                 HorizontalAlignment="Left"
-                Margin="34,53,0,0"
+                Margin="865,113,0,0"
                 VerticalAlignment="Top"
                 Click="Make_Report_Click"/>
 
         <ListBox Name="IncomeListBox"
-                 Margin="34,114,579,145"/>
+                 Margin="765,173,40,352"/>
 
         <ListBox Name="ExpenseListBox"
-                 Margin="384,114,222,158"/>
+                 Margin="765,443,40,61"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="275,352,415,61" Name="LatestTransactionsListBox"/>
+        <ComboBox HorizontalAlignment="Left"
+          Margin="10,10,0,0"
+          VerticalAlignment="Top"
+          Width="120"
+          Name="Cards"
+          SelectionChanged="Cards_Choice_SelectionChanged"/>
+        <Label Content="" HorizontalAlignment="Left" Name ="CurrentBalanceLabel"  Margin="275,123,0,0" VerticalAlignment="Top" Width="418" Height="129" FontSize="80"/>
+
+        <Label Content="Картка отримувача"
+       Name="TransferCardLabel"
+       Visibility="Hidden"
+       HorizontalAlignment="Left"
+       Margin="35,420,0,0"
+       VerticalAlignment="Top"/>
+
+        <ComboBox Name="TransferCardBox"
+          Visibility="Hidden"
+          HorizontalAlignment="Left"
+          Margin="35,445,0,0"
+          Width="150"
+          VerticalAlignment="Top"/>
+
+        <Label Content="Сума"
+       Name="TransferAmountLabel"
+       Visibility="Hidden"
+       HorizontalAlignment="Left"
+       Margin="35,490,0,0"
+       VerticalAlignment="Top"/>
+
+        <TextBox Name="TransferAmountBox"
+         Visibility="Hidden"
+         HorizontalAlignment="Left"
+         Margin="35,515,0,0"
+         Width="150"
+         VerticalAlignment="Top"/>
+
+        <Button Content="Переказати"
+        Name="ConfirmTransferButton"
+        Visibility="Hidden"
+        HorizontalAlignment="Left"
+        Margin="35,560,0,0"
+        Width="150"
+        Height="35"
+        VerticalAlignment="Top"
+        Click="ConfirmTransferButton_Click"/>
+
+        <Button Content="Переказ між картками"
+        HorizontalAlignment="Left"
+        Margin="35,352,0,0"
+        VerticalAlignment="Top"
+        Height="42"
+        Width="145"
+        Name="Transact_Between_Cards"
+        Click="Transact_Between_Cards_Click"/>
     </Grid>
 </Window>
